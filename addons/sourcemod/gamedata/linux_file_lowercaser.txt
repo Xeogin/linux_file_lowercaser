@@ -5,7 +5,6 @@
         "#supported"
         {
             "engine"    "css"
-            "engine"    "tf2"
             "engine"    "hl2dm"
             "engine"    "dods"
         }
@@ -28,6 +27,12 @@
             {
                 "library"       "materialsystem"
                 "linux"         "@_ZN15CMaterialSystem12FindMaterialEPKcS1_bS1_"
+            }
+
+            "CFileSystem_Stdio::Open"
+            {
+                "library"       "filesystem_stdio"
+                "linux"         "@_ZN17CFileSystem_Stdio4OpenEPKcS1_S1_"
             }
         }
 
@@ -63,7 +68,7 @@
             {
                 "signature" "IMaterialSystem::FindMaterial"
                 "callconv"  "thiscall"
-                "return"    "ignore"
+                "return"    "void"
                 "arguments"
                 {
                     "pMaterialName"
@@ -79,6 +84,27 @@
                         "type" "bool"
                     }
                     "pComplainPrefix"
+                    {
+                        "type" "charptr"
+                    }
+                }
+            }
+            "CFileSystem_Stdio::Open"
+            {
+                "signature" "CFileSystem_Stdio::Open"
+                "callconv"  "thiscall"
+                "return"    "void"
+                "arguments"
+                {
+                    "pFileName"
+                    {
+                        "type" "charptr"
+                    }
+                    "pOptions"
+                    {
+                        "type" "charptr"
+                    }
+                    "pPathID"
                     {
                         "type" "charptr"
                     }
